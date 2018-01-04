@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
     .subscribe(data => {
        this.responseData = data;
        console.log(this.responseData);
-       console.log('here');
     },
     error => {
       console.log(error);
