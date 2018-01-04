@@ -1,0 +1,30 @@
+<app-dialog [(visible)]="showDialog">
+    <div class="container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            
+                        <label class="lblstyle" tabindex="0" for="username">User Name</label>
+                        <input tabindex="0" name="username" id="username" [ngClass]="{'error': isValid('username')}" placeholder="" formControlName="username" aria-required="true" aria-describedby="Enter UserName">
+                        <div *ngIf="isValid('username')">
+                            <span class="alert" *ngIf="form.controls['username'].hasError('minlength')"> Min. Length should be 5 and Max. Length should be 6.</span>
+                            <span class="alert" *ngIf=" form.controls[ 'username'].hasError( 'maxlength') "> Min. Length should be 5 and Max. Length should be 6. </span>
+                            <span class="alert" *ngIf="form.controls['username'].hasError('required')">Booking Code is requierd </span>
+                            <span class="alert" *ngIf=" form.controls[ 'username'].hasError( 'pattern') ">Only Alphabet and Numbers between 2 and 9 allowed.</span>
+                        </div>
+            
+                        <label class="lblstyle" tabindex="0 " for="password ">Password</label>
+                        <input tabindex="0" type="password" name="password" id="password" [ngClass]="{ 'error': isValid( 'password')} " placeholder=" " formControlName="password" aria-required="true " aria-describedby="Enter Password ">
+                        <div *ngIf="isValid( 'password') ">
+                            <span class="alert" *ngIf="form.controls[ 'password'].hasError( 'required') ">Family Name is Requierd</span>
+                            <span class="alert" *ngIf="form.controls[ 'password'].hasError( 'minlength') ">Min. Length should be 2 and Max. Length should be 30</span>
+                            <span class="alert" *ngIf="form.controls[ 'password'].hasError( 'maxlength') ">Min. Length should be 2 and Max. Length should be 30. </span>
+                            <span class="alert" *ngIf="form.controls[ 'password'].hasError( 'pattern') ">Only Alphabets are  allowed.</span>
+                        </div>
+            
+                        <br> <br>
+                        <span class="alert" *ngIf='showWronPwdAlert'>Username or password is wrong.</span>
+                        <div style="text-align:center;"><Button tabindex="0" aria-required="true " type="submit " [disabled]="!form.valid " [ngClass]="{ 'buttondisable': !form.valid, 'buttonenable': form.valid} ">Login</Button></div>
+                        
+                    </form>
+    </div>
+   
+</app-dialog>
