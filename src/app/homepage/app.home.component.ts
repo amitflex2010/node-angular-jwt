@@ -13,15 +13,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   private responseData;
 
-  @ViewChild('dynamic', {
-    read: ViewContainerRef
-  })
-
-  viewContainerRef: ViewContainerRef;
+  @ViewChild('dynamic', { read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
 
   constructor(private homeService: HomeService, private componentLoader: DynamicComponentLoader,
   viewContainerRef: ViewContainerRef) {
-    this.viewContainerRef = viewContainerRef;
+     this.viewContainerRef = viewContainerRef;
   }
 
   ngOnInit() {
@@ -44,5 +40,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    // https://www.concretepage.com/angular-2/angular-2-4-dynamic-component-loader-example#run
   }
 }
