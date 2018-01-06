@@ -10,12 +10,16 @@ import { DemoComponent } from './demo/app.component.demo';
 import { LoginComponent} from './login/app.login.component';
 import { RegisterComponent} from './login/app.register.component';
 import { HomeComponent } from './homepage/app.home.component';
+import { DynamicComponent} from './homepage/app.dynamic.component';
+
 import { AppService } from './service/app.service';
 import { LoginService} from './login/app.login.service';
 import { HomeService } from './homepage/app.home.service';
+import { DynamicComponentLoader } from './homepage/app.dynamiccomponentloader.component';
 
 import { LoginAuthGuard} from './login/app.login.authguard';
 import { DialogComponent } from './directive/dialog/dialog.component';
+
 
 
 @NgModule({
@@ -25,7 +29,8 @@ import { DialogComponent } from './directive/dialog/dialog.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    DialogComponent
+    DialogComponent,
+    DynamicComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import { DialogComponent } from './directive/dialog/dialog.component';
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [AppService, LoginService, LoginAuthGuard, HomeService],
-  bootstrap: [AppComponent]
+  providers: [AppService, LoginService, LoginAuthGuard, HomeService, DynamicComponentLoader],
+  bootstrap: [AppComponent],
+  entryComponents: [DynamicComponent]
 })
 export class AppModule { }
