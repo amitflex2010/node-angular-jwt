@@ -1,6 +1,8 @@
-import { Component, OnInit, AfterViewInit, ViewContainerRef, ViewChild,  } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewContainerRef, ViewChild, OnDestroy } from '@angular/core';
 import { HomeService} from './app.home.service';
 import { DynamicComponentLoader } from './app.dynamiccomponentloader.component';
+import { BannerComponent } from './banner/banner.component';
+import { PostItem } from './banner/banner.post-item';
 
 
 @Component({
@@ -8,12 +10,18 @@ import { DynamicComponentLoader } from './app.dynamiccomponentloader.component';
   templateUrl: './app.home.component.html',
   styleUrls: ['./app.home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'home';
 
   private responseData;
+  postItems: PostItem[];
+  intervalId: any;
+  postIndex = -1;
 
   @ViewChild('dynamic', { read: ViewContainerRef }) viewContainerRef: ViewContainerRef;
+
+  @ViewChild(BannerComponent)
+  private bannerComponent: BannerComponent;
 
   constructor(private homeService: HomeService, private componentLoader: DynamicComponentLoader,
   viewContainerRef: ViewContainerRef) {
@@ -40,6 +48,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // https://www.concretepage.com/angular-2/angular-2-4-dynamic-component-loader-example#run
+    this.postItems = this.componentLoader.getAllPosts();
+    this.startPostHighlights();
   }
+
+  startPostHighlights() {
+    this.intervalId = setInterval(() => {
+    this.postIndex = (this.postIndex === this.postItems.length - 1) ? 0 : this.postIndex + 1;
+
+  // Use viewContainerRef from Component
+  this.componentLoader.loadComponent(this.bannerComponent.viewContainerRef, this.postItems[this.postIndex]);
+
+      }, 2000);
+  }
+
+ ngOnDestroy() {
+    clearInterval(this.intervalId);
+ }
 }

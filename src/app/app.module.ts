@@ -11,6 +11,9 @@ import { LoginComponent} from './login/app.login.component';
 import { RegisterComponent} from './login/app.register.component';
 import { HomeComponent } from './homepage/app.home.component';
 import { DynamicComponent} from './homepage/app.dynamic.component';
+import { TechnologyComponent } from './homepage/banner/banner.technology.component';
+import { ArticleComponent } from './homepage/banner/banner.article.component';
+import { BannerComponent } from './homepage/banner/banner.component';
 
 import { AppService } from './service/app.service';
 import { LoginService} from './login/app.login.service';
@@ -30,7 +33,10 @@ import { DialogComponent } from './directive/dialog/dialog.component';
     RegisterComponent,
     HomeComponent,
     DialogComponent,
-    DynamicComponent
+    DynamicComponent,
+    TechnologyComponent,
+    ArticleComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,6 @@ import { DialogComponent } from './directive/dialog/dialog.component';
   ],
   providers: [AppService, LoginService, LoginAuthGuard, HomeService, DynamicComponentLoader],
   bootstrap: [AppComponent],
-  entryComponents: [DynamicComponent]
+  entryComponents: [DynamicComponent, TechnologyComponent, ArticleComponent]
 })
 export class AppModule { }
