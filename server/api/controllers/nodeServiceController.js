@@ -7,7 +7,7 @@ var jwt = require('jsonwebtoken');
 var config = require('../../config');
 app.set('superSecret', config.secret);
 
-var alltask = "{'widget': {'debug': 'on', 'window': {'title': 'Sample Konfabulator Widget','name':'main_window','width': 500,'height': 500},'type':'All task'}";
+var alltask = {'widget': 'Sample Konfabulator Widget','type':'All task'};
 exports.list_all_tasks = function(req, res) {
 
     var authHeader = req.headers.authorization;
@@ -22,7 +22,7 @@ exports.list_all_tasks = function(req, res) {
                   } else {
                     // if everything is good, save to request for use in other routes
                     req.decoded = decoded;    
-                    res.json({ success:true, status:200,  data: alltask });
+                    res.json({ success:true, status:200,  data: (alltask) });
                   }
                 });
             
