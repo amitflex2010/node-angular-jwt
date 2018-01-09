@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/app.login.component';
 import {RegisterComponent} from './login/app.register.component';
 import { HomeComponent } from './homepage/app.home.component';
+import { DetailComponent} from './homepage/app.details.component';
 
 import { LoginAuthGuard} from './login/app.login.authguard';
 
@@ -11,9 +12,10 @@ import { LoginAuthGuard} from './login/app.login.authguard';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full'},
     { path: 'login', component: LoginComponent, canActivate: [LoginAuthGuard] },
-   { path: 'register', component: RegisterComponent },
-   { path: 'home', component: HomeComponent },
-   { path: '**', redirectTo: '/' }
+    { path: 'register', component: RegisterComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'home/:id', component: DetailComponent},
+    { path: '**', redirectTo: '/' }
 ];
 
 export const ApplicationRouting = RouterModule.forRoot(appRoutes);

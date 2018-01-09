@@ -14,6 +14,7 @@ import { DynamicComponent} from './homepage/app.dynamic.component';
 import { TechnologyComponent } from './homepage/banner/banner.technology.component';
 import { ArticleComponent } from './homepage/banner/banner.article.component';
 import { BannerComponent } from './homepage/banner/banner.component';
+import { DetailComponent } from './homepage/app.details.component';
 
 import { AppService } from './service/app.service';
 import { LoginService} from './login/app.login.service';
@@ -21,6 +22,7 @@ import { HomeService } from './homepage/app.home.service';
 import { DynamicComponentLoader } from './homepage/app.dynamiccomponentloader.component';
 
 import { LoginAuthGuard} from './login/app.login.authguard';
+
 import { DialogComponent } from './directive/dialog/dialog.component';
 
 
@@ -36,7 +38,8 @@ import { DialogComponent } from './directive/dialog/dialog.component';
     DynamicComponent,
     TechnologyComponent,
     ArticleComponent,
-    BannerComponent
+    BannerComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

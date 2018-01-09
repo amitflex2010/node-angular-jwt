@@ -3,10 +3,10 @@ import { AppService} from '../service/app.service';
 
 @Component({
   selector: 'app-demo',
-  templateUrl: './app.component-demo.html',
-  styleUrls: ['./app.component-demo.css']
+  templateUrl: './app.details.component.html',
+  styleUrls: ['./app.details.component.css']
 })
-export class DemoComponent implements OnInit {
+export class DetailComponent implements OnInit {
   title = 'Demo';
 
   private classData;

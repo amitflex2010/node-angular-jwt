@@ -1,36 +1,65 @@
 
 
 var express = require('express'),
-app = express()
+app = express();
 var jwt = require('jsonwebtoken');
 
 var config = require('../../config');
 app.set('superSecret', config.secret);
 
-var alltask = {'widget': 'Sample Konfabulator Widget','type':'All task'};
+var alltask = {
+	"widget": {
+		"header": "SVG Viewer",
+		"items": [{
+				'id': 1, "name": "Sample Konfabulator Widget1"
+			},
+			{
+				'id': 2, "name": "Sample Konfabulator Widget2"
+			},
+
+			{
+				'id': 3, "name": "Sample Konfabulator Widget3"
+			},
+			{
+				'id': 4, "name": "Sample Konfabulator Widget4"
+			},
+			{
+				'id': 5, "name": "Sample Konfabulator Widget5"
+			}
+
+		]
+	}
+};
 exports.list_all_tasks = function(req, res) {
 
     var authHeader = req.headers.authorization;
-    var token = authHeader.split('Bearer ')[1];
-  
-        if (token) {
+    if(authHeader != undefined)
+    {
+        var token = authHeader.split('Bearer ')[1];
+    
+            if (token) {
+                
+                    // verifies secret and checks exp
+                    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+                    if (err) {
+                        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+                    } else {
+                        // if everything is good, save to request for use in other routes
+                        req.decoded = decoded;    
+                        res.json({ success:true, status:200,  data: (alltask) });
+                    }
+                    });
+                
+                }
             
-                // verifies secret and checks exp
-                jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
-                  if (err) {
-                    return res.json({ success: false, message: 'Failed to authenticate token.' });    
-                  } else {
-                    // if everything is good, save to request for use in other routes
-                    req.decoded = decoded;    
-                    res.json({ success:true, status:200,  data: (alltask) });
-                  }
-                });
-            
-              }
-         
-         else {
+            else {
+                res.json({ success: false, message: 'Unauthorized request.' });
+            }
+        }
+        else
+        {
             res.json({ success: false, message: 'Unauthorized request.' });
-         }
+        }
 };
 
  

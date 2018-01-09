@@ -34,7 +34,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     .subscribe(data => {
       this.responseData = data;
       const resdata = this.responseData.data;
-      this.renderNow(JSON.stringify(resdata.widget));
+      this.renderNow((resdata.widget));
+      console.log(resdata.widget.header);
     },
     error => {
       console.log(error);

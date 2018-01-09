@@ -1,13 +1,19 @@
 .post-highlights1 {
-    background-color: #F5D0A9;
-    color: #0000FF;
-    width: 275px;
-    height: 150px;
+    background-image: url('../../../assets/af_pattern_bg.png');
+    color: #F2F2F2;
+    width: 375px;
+    height: 230px;
+    padding: 10px;
+    margin-left: 5px;
+    font-family: myFirstFont;
 }
 
 .post-highlights2 {
-    background-color: #0B3861;
+    background-image: url('../../../assets/af_pattern_bg.png');
     color: #F2F2F2;
-    width: 275px;
-    height: 150px;
+    width: 375px;
+    height: 230px;
+    padding: 10px;
+    margin-left: 5px;
+    font-family: myFirstFont;
 }
