@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // Use viewContainerRef from Component
   this.componentLoader.loadComponent(this.bannerComponent.viewContainerRef, this.postItems[this.postIndex]);
 
-      }, 2000);
+      }, 5000);
   }
 
  ngOnDestroy() {
