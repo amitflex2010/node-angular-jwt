@@ -110,6 +110,7 @@ exports.doLogin = function(req, res) {
               res.json({
                 success: true,
                 message: 'Login Success',
+                user: login_user.user,
                 token: token
               });
     }

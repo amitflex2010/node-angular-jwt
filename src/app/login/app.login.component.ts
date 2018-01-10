@@ -58,7 +58,6 @@ createForm() {
 
 onSubmit() {
   this.getBookings(this.form.value);
-  
 }
 
 /**
@@ -75,6 +74,7 @@ getBookings(loginData) {
      if ((data.success) === true) {
       this.showWronPwdAlert = false;
       localStorage.setItem('jwt-token', data.token);
+      localStorage.setItem('logged-user', data.user);
        this.router.navigate(['/home'],
        {
            queryParams: {username: loginData.username}, relativeTo: this.route });
