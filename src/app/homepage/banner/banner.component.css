@@ -2,18 +2,10 @@
     background-image: url('../../../assets/af_pattern_bg.png');
     color: #F2F2F2;
     width: 375px;
-    height: 230px;
+    height: 260px;
     padding: 10px;
     margin-left: 5px;
-    font-family: myFirstFont;
-}
-
-.post-highlights2 {
-    background-image: url('../../../assets/af_pattern_bg.png');
-    color: #F2F2F2;
-    width: 375px;
-    height: 230px;
-    padding: 10px;
-    margin-left: 5px;
+    float: right;
+    margin-top: 61px;
     font-family: myFirstFont;
 }

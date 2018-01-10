@@ -4,11 +4,10 @@
     height: 93%;
     margin-top: -31px;
     padding: 10px;
-
+    display: inline-block
 }
 
-.d-banner
-{
-   float: right;
-   position: relative;
+.d-banner {
+    float: right;
+    position: relative;
 }
