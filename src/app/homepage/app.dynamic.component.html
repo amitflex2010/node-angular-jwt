@@ -1,6 +1,6 @@
 <h2>{{ data.header }}</h2>
 
 <div *ngFor="let item of data.items; index as i;" class="d-item">
-    <div class="d-title"><i class="fa fa-angle-double-right" style="font-size:24px; cursor:pointer; "></i> <a href="home/{{ item.id }}">{{ item.name }}</a></div>
+    <div class="d-title"><i class="fa fa-angle-double-right" style="font-size:24px; cursor:pointer; "></i> <a href="home/item/{{ item.id }}">{{ item.name }}</a></div>
     <div class="d-spn"><i class="fa fa-trash-o"></i></div>
 </div>

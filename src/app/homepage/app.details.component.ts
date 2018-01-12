@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-
+    document.getElementById('loginBtn').textContent = 'LOGOUT';
     this.appService.addBookWithObservable()
     .subscribe(data => {
        this.classData = data;

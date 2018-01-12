@@ -15,6 +15,7 @@ import { TechnologyComponent } from './homepage/banner/banner.technology.compone
 import { ArticleComponent } from './homepage/banner/banner.article.component';
 import { BannerComponent } from './homepage/banner/banner.component';
 import { DetailComponent } from './homepage/app.details.component';
+import { NotFoundComponent } from './notfound/app.component.notfound';
 
 import { AppService } from './service/app.service';
 import { LoginService} from './login/app.login.service';
@@ -39,7 +40,8 @@ import { DialogComponent } from './directive/dialog/dialog.component';
     TechnologyComponent,
     ArticleComponent,
     BannerComponent,
-    DetailComponent
+    DetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

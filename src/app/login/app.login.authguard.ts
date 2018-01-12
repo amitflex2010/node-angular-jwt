@@ -9,7 +9,8 @@ export class LoginAuthGuard implements CanActivate {
 
     canActivate(): boolean {
       const token = localStorage.getItem('jwt-token');
-
+       console.log(token);
+       console.log(this.isTokenExpired());
       if (token && this.isTokenExpired()) {
         return true;
       }else {
