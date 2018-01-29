@@ -22,4 +22,8 @@ export class AppComponent {
    }
 
  }
+
+ showupload() {
+  window.location.href = '/upload';
+ }
 }

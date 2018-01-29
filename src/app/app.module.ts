@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ApplicationRouting } from './app-routing.module';
 
+
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/app.component.demo';
 import { LoginComponent} from './login/app.login.component';
@@ -16,6 +17,8 @@ import { ArticleComponent } from './homepage/banner/banner.article.component';
 import { BannerComponent } from './homepage/banner/banner.component';
 import { DetailComponent } from './homepage/app.details.component';
 import { NotFoundComponent } from './notfound/app.component.notfound';
+import { ImageUploadComponent } from './imageupload/app.component.imageupload';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 import { AppService } from './service/app.service';
 import { LoginService} from './login/app.login.service';
@@ -41,7 +44,9 @@ import { DialogComponent } from './directive/dialog/dialog.component';
     ArticleComponent,
     BannerComponent,
     DetailComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ImageUploadComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
