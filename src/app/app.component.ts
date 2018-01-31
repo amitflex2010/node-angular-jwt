@@ -23,7 +23,12 @@ export class AppComponent {
 
  }
 
- showupload() {
+ showUpload() {
   window.location.href = '/upload';
  }
+
+ showGallery() {
+  window.location.href = '/gallery';
+ }
+
 }

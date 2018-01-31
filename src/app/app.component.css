@@ -96,6 +96,24 @@ li{
     line-height: 44px;
    
 }
+.galleryBtn
+{
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    opacity: 1;
+    font-size: 13px;
+    font-family: myFirstFont;
+    border-radius: 2px;
+    font-weight: bold;
+    float: right;
+    margin-top: -50px;
+    margin-right: 190px;
+    height: 44px;
+    line-height: 44px;
+}
 
 
 .banner
@@ -123,7 +141,7 @@ li{
     background-image: url('../assets/bg.jpg');
 
     /* Full height */
-    height: 98%; 
+    height: 100%; 
 
     /* Center and scale the image nicely */
     background-position: center;

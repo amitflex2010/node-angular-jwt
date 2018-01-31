@@ -12,13 +12,14 @@ import { ImageUploadComponent } from './imageupload/app.component.imageupload';
 
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/', pathMatch: 'full'},
+    { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'upload', component: ImageUploadComponent },
+    { path: 'gallery', loadChildren: 'app/galleryModule/gallery.module#GalleryModule' },
     { path: 'notfound', component: NotFoundComponent},
     { path: 'home', component: HomeComponent, canActivate: [LoginAuthGuard] },
-    { path: 'home/item/:id', component: DetailComponent, canActivate: [LoginAuthGuard]},
+    { path: 'home/item/:id', component: DetailComponent, canActivate: [LoginAuthGuard] },
     { path: '**', redirectTo: '/notfound' }
 ];
 

@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="single">Select Image to Upload</label>
-    <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
+    <input type="file" id="imgfileRef" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
 </div> 
 <table class="table">
     <thead>
@@ -16,7 +16,8 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of uploader.queue">
-        <td><strong *ngIf="!item.isSuccess">{{ item.file.name }}</strong><img width="50px" height="50px" *ngIf="item.isSuccess" src="uploads/{{item.file.name}}"/></td>
+        <td><strong *ngIf="!item.isSuccess">{{ item.file.name }}</strong><img id="preview" width="50px" height="50px" 
+            *ngIf="item.isSuccess" src="uploads/{{item.file.name}}"/></td>
         <td class="alinmiddle" nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
         <td class="alinmiddle">
             <div class="progress" style="margin-bottom: 0;">
