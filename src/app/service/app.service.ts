@@ -156,7 +156,7 @@ getAll(): Observable<any> {
     console.log('hshhwwh');
     // const headers = new Headers({ 'Content-Type': 'application/json' });
    // const options = new RequestOptions({ headers: headers });
-    return this.http.post(this.baseUrl, this.books)
+    return this.http.get(this.baseUrl)
                .catch(this.onRequestError);
 }
 

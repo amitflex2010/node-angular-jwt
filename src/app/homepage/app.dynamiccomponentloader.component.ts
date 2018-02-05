@@ -23,14 +23,13 @@ import {
       this.rootViewContainer = viewContainerRef;
     }
 
-    addDynamicComponent(response: String) {
+    addDynamicComponent(response: any) {
         const factory = this.factoryResolver
                             .resolveComponentFactory(DynamicComponent);
         const component = factory
           .create(this.rootViewContainer.parentInjector);
           component.instance.data = response;
         this.rootViewContainer.insert(component.hostView);
-        console.log(component.instance.data);
       }
 
       loadComponent(viewContainerRef: ViewContainerRef, postItem: PostItem) {

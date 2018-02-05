@@ -1,13 +1,57 @@
 .post-highlights1 {
-    background-color: #F5D0A9;
-    color: #0000FF;
-    width: 275px;
-    height: 150px;
+    background-image: url('../../../assets/af_pattern_bg.png');
+    color: #F2F2F2;
+    width: 375px;
+    height: 260px;
+    padding: 10px;
+    margin-left: 5px;
+    float: right;
+    margin-top: 61px;
+    font-family: myFirstFont;
+    animation: fadein 5s;
+    -moz-animation: fadein 5s;
+    /* Firefox */
+    -webkit-animation: fadein 5s;
+    /* Safari and Chrome */
+    -o-animation: fadein 5s;
+    /* Opera */
 }
 
-.post-highlights2 {
-    background-color: #0B3861;
-    color: #F2F2F2;
-    width: 275px;
-    height: 150px;
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

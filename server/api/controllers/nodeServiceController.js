@@ -1,36 +1,63 @@
-
-
 var express = require('express'),
-app = express()
+app = express();
 var jwt = require('jsonwebtoken');
-
+var multer = require('multer');
 var config = require('../../config');
 app.set('superSecret', config.secret);
 
-var alltask = {'widget': 'Sample Konfabulator Widget','type':'All task'};
+var alltask = {
+	"widget": {
+		"header": "SVG Viewer",
+		"items": [{
+				'id': 1, "name": "Sample Konfabulator Widget1"
+			},
+			{
+				'id': 2, "name": "Sample Konfabulator Widget2"
+			},
+
+			{
+				'id': 3, "name": "Sample Konfabulator Widget3"
+			},
+			{
+				'id': 4, "name": "Sample Konfabulator Widget4"
+			},
+			{
+				'id': 5, "name": "Sample Konfabulator Widget5"
+			}
+
+		]
+	}
+};
 exports.list_all_tasks = function(req, res) {
 
     var authHeader = req.headers.authorization;
-    var token = authHeader.split('Bearer ')[1];
-  
-        if (token) {
+    if(authHeader != undefined)
+    {
+        var token = authHeader.split('Bearer ')[1];
+    
+            if (token) {
+                
+                    // verifies secret and checks exp
+                    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+                    if (err) {
+                        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+                    } else {
+                        // if everything is good, save to request for use in other routes
+                        req.decoded = decoded;    
+                        res.json({ success:true, status:200,  data: (alltask) });
+                    }
+                    });
+                
+                }
             
-                // verifies secret and checks exp
-                jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
-                  if (err) {
-                    return res.json({ success: false, message: 'Failed to authenticate token.' });    
-                  } else {
-                    // if everything is good, save to request for use in other routes
-                    req.decoded = decoded;    
-                    res.json({ success:true, status:200,  data: (alltask) });
-                  }
-                });
-            
-              }
-         
-         else {
+            else {
+                res.json({ success: false, message: 'Unauthorized request.' });
+            }
+        }
+        else
+        {
             res.json({ success: false, message: 'Unauthorized request.' });
-         }
+        }
 };
 
  
@@ -81,6 +108,7 @@ exports.doLogin = function(req, res) {
               res.json({
                 success: true,
                 message: 'Login Success',
+                user: login_user.user,
                 token: token
               });
     }
@@ -95,6 +123,33 @@ var register_task = { message: 'Registered' };
 exports.doRegister = function(req, res) {
 
 res.json(register_task);
+};
+
+var storage = multer.diskStorage({ //multers disk storage settings
+    destination: function (req, file, cb) {
+        cb(null, '../src/uploads/');
+    },
+    filename: function (req, file, cb) {
+        var datetimestamp = Date.now();
+        cb(null, file.originalname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
+       // cb(null, file.originalname);
+    }
+});
+
+var upload = multer({ //multer settings
+                storage: storage
+            }).single('file');
+
+exports.doUpload = function(req, res) {
+    
+    upload(req,res,function(err){
+        console.log(req.file);
+        if(err){
+             res.json({error_code:1,err_desc:err});
+             return;
+        }
+         res.json({error_code:0,err_desc:null});
+    });
 };
 
 
