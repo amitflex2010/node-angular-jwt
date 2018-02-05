@@ -115,6 +115,11 @@ li{
     line-height: 44px;
 }
 
+Button:hover
+{   
+    color: rgb(190, 170, 236);
+}
+
 
 .banner
 {
@@ -148,6 +153,7 @@ li{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 .welcomeTxt
 {
