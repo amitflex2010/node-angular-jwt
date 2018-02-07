@@ -24,7 +24,7 @@
             <span>${{track.price}} </span>
           </div>
           <div class="strrating">
-              <app-starrating [rating]="track.rating"></app-starrating>
+              <app-starrating [rating] = "track.rating" (clickedItem) = "onStarClicked($event)"></app-starrating>
           </div>
         </li>
       </ul>

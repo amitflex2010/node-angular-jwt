@@ -36,10 +36,13 @@ import { SearchItem } from './searchitem';
           .do(_ => this.loading = true)
           .switchMap(term => this.itunes.search(term))
           .do(_ => this.loading = false);
-          //.do(_ => this.ncount = this.results.rating);
     }
 
     doSearch(term: string) {
       this.itunes.search(term);
+    }
+
+    onStarClicked(event) {
+        console.log(event);
     }
   }
