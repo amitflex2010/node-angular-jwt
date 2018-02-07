@@ -1,0 +1,48 @@
+input[type=search] {
+    border: 1px solid rgb(24, 22, 22);
+    border-radius: 4px;
+}
+.bg {
+    background-color: #fff;
+    width: 100%;
+    height: 90%;
+    
+    padding: 10px;
+    display: inline-block
+}
+.list-style
+{
+   margin-top: 19px;
+    height: 84%;
+    overflow-y: auto;	
+}
+
+#result::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#result::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#result::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+.price
+{
+    margin-left: 38px;
+    margin-top: -34px;
+    
+}
+.price span{
+    font-weight: bold;
+}
+.strrating
+{
+    float:right; 
+    margin-top:-34px
+}

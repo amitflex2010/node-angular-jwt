@@ -8,6 +8,7 @@ import { DetailComponent} from './homepage/app.details.component';
 import { LoginAuthGuard} from './login/app.login.authguard';
 import { NotFoundComponent } from './notfound/app.component.notfound';
 import { ImageUploadComponent } from './imageupload/app.component.imageupload';
+import { SearchComponent} from './search/search.component';
 
 
 
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'upload', component: ImageUploadComponent },
     { path: 'gallery', loadChildren: 'app/galleryModule/gallery.module#GalleryModule' },
+    { path: 'search', component: SearchComponent },
     { path: 'notfound', component: NotFoundComponent},
     { path: 'home', component: HomeComponent, canActivate: [LoginAuthGuard] },
     { path: 'home/item/:id', component: DetailComponent, canActivate: [LoginAuthGuard] },

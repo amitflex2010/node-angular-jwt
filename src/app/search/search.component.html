@@ -1,0 +1,32 @@
+<div class="bg">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="search"
+              class="form-control"
+              placeholder="Enter search string"
+              [formControl]="searchField">
+      </div>
+    </form>
+    <hr>
+    <div class="text-center">
+      <p class="lead" *ngIf="loading">Loading...</p>
+    </div>
+    <div class="list-style scrollbar" id="result">
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let track of results | async">
+          <img src="{{track.thumbnail}}">
+          <div class="price">
+            <a target="_blank"
+              href="{{track.link}}">{{ track.track }}
+            </a>
+          <br>
+            <span>${{track.price}} </span>
+          </div>
+          <div class="strrating">
+              <app-starrating [rating]="track.rating"></app-starrating>
+          </div>
+        </li>
+      </ul>
+  </div>
+</div>

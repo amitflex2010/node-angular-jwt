@@ -30,5 +30,8 @@ export class AppComponent {
  showGallery() {
   window.location.href = '/gallery';
  }
+ showSearch() {
+  window.location.href = '/search';
+ }
 
 }

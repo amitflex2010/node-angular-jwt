@@ -1,0 +1,16 @@
+.none-style
+{
+    list-style: none;
+}
+.none-style li
+{
+    display:inline;
+}
+.selectedItem
+{
+    color:#e6e227
+}
+.star-item
+{
+    cursor: pointer;
+}

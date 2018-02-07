@@ -1,0 +1,11 @@
+<div>
+    
+    <ul class="none-style">
+        <li 
+            *ngFor="let item of ratingRange let i = index" [ngClass]="setSelectedRating(i)" 
+            (click) = "starClick(item, $event, i)">
+                <span class="glyphicon glyphicon-star star-item">
+            </span>
+        </li>
+    </ul>
+</div>

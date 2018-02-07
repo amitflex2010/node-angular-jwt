@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   message: 'Booking code does not exist.'
   };
 
-
  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private loginService: LoginService) {
      this.frmbuilder = fb;
 }
