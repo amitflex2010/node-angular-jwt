@@ -79,8 +79,6 @@ getBookings(loginData) {
            queryParams: {username: loginData.username}, relativeTo: this.route });
      }else {
       this.showWronPwdAlert = true;
-       // this.router.navigate(['/notfound'],
-       // { queryParams: {statuscode: 404, message: 'Booking code does not exist.'}});
      }
    },
    error => {

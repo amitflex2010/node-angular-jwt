@@ -31,6 +31,8 @@ import { LoginAuthGuard} from './login/app.login.authguard';
 
 import { DialogComponent } from './directive/dialog/dialog.component';
 import { StarRatingComponent } from './directive/star-rating/star-rating.component';
+import { AlertComponent } from './directive/flash-message/flash-message.component';
+import { AlertService } from './directive/flash-message/service/flash-message.service';
 
 
 
@@ -52,7 +54,8 @@ import { StarRatingComponent } from './directive/star-rating/star-rating.compone
     NotFoundComponent,
     ImageUploadComponent,
     SearchComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { StarRatingComponent } from './directive/star-rating/star-rating.compone
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [AppService, LoginService, LoginAuthGuard, HomeService, DynamicComponentLoader, SearchService],
+  providers: [AppService, LoginService, LoginAuthGuard, HomeService, DynamicComponentLoader, SearchService,
+    AlertService],
   bootstrap: [AppComponent],
   entryComponents: [DynamicComponent, TechnologyComponent, ArticleComponent]
 })

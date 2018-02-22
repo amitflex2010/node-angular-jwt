@@ -1,4 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
+import { AlertService } from '../directive/flash-message/service/flash-message.service';
+
 
 
 @Component({
@@ -10,9 +12,14 @@ export class NotFoundComponent implements OnInit {
   title = 'Page Not Found.';
 
   private classData;
-  constructor() { }
+  constructor(private alertService: AlertService) { }
 
   ngOnInit() {
+    this.error('Path Not Found');
+    }
+
+  error(message: string) {
+      this.alertService.error(message);
 
   }
 }

@@ -1,5 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="title bg">
+
   <div class="bgimg">
     <div class="welcomeTxt">Welcome to {{ title }}! </div>
     <Button id="loginBtn" class="regBtn" (click)="showLogin();">REGISTER/LOG IN</Button>
@@ -7,7 +8,7 @@
     <Button id="galleryBtn" class="galleryBtn" (click)="showGallery();">GALLERY</Button>
     <Button id="searchBtn" class="searchBtn" (click)="showSearch();">SEARCH</Button>
 </div>
-
+<div><app-alert></app-alert></div>
 <router-outlet></router-outlet>
 
 <div class="footer"><ul class="list-social">

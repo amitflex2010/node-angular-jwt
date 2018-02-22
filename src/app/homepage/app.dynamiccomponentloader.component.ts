@@ -43,22 +43,22 @@ import {
       getAllPosts() {
         return [
           new PostItem(TechnologyComponent, {name: 'Angular 2',
-              description: 'Angular is a platform that makes it easy to build applications with the web.'}),
+              description: 'Angular is a platform that makes it easy to build applications with the web.', rating: '1'}),
 
           new PostItem(TechnologyComponent, {name: 'Spring Boot',
-              description: 'Spring Boot makes it easy to create stand-alone, production-grade applications.'}),
+              description: 'Spring Boot makes it easy to create stand-alone, production-grade applications.', rating: '2'}),
 
           new PostItem(ArticleComponent, {sn: '1',
-              title: 'Angular 2 Routing and Navigation Example', category: 'Angular 2'}),
+              title: 'Angular 2 Routing and Navigation Example', category: 'Angular 2', rating: '3'}),
 
           new PostItem(ArticleComponent, {sn: '2',
-              title: 'Angular 2 Template Reference Variable Example', category: 'Angular 2'}),
+              title: 'Angular 2 Template Reference Variable Example', category: 'Angular 2', rating: '4'}),
 
           new PostItem(ArticleComponent, {sn: '3',
-              title: 'Spring Boot Custom Banner Example', category: 'Spring Boot'}),
+              title: 'Spring Boot Custom Banner Example', category: 'Spring Boot', rating: '5'}),
 
           new PostItem(ArticleComponent, {sn: '4',
-              title: 'Spring Boot Change Default Server Port', category: 'Spring Boot'})
+              title: 'Spring Boot Change Default Server Port', category: 'Spring Boot', rating: '3'})
         ];
             }
     }

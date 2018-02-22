@@ -3,6 +3,7 @@ import { HomeService} from './app.home.service';
 import { DynamicComponentLoader } from './app.dynamiccomponentloader.component';
 import { BannerComponent } from './banner/banner.component';
 import { PostItem } from './banner/banner.post-item';
+import { AlertService } from '../directive/flash-message/service/flash-message.service';
 
 
 @Component({
@@ -24,11 +25,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private bannerComponent: BannerComponent;
 
   constructor(private homeService: HomeService, private componentLoader: DynamicComponentLoader,
-  viewContainerRef: ViewContainerRef) {
+  viewContainerRef: ViewContainerRef, private alertService: AlertService) {
      this.viewContainerRef = viewContainerRef;
   }
 
   ngOnInit() {
+    this.success('You have been successfully logged out');
+
     document.getElementById('loginBtn').textContent = 'LOGOUT';
     this.homeService.getAll()
     .subscribe(data => {
@@ -61,6 +64,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   this.componentLoader.loadComponent(this.bannerComponent.viewContainerRef, this.postItems[this.postIndex]);
 
       }, 5000);
+  }
+
+  success(message: string) {
+    this.alertService.success(message);
   }
 
  ngOnDestroy() {

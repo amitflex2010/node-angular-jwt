@@ -7,10 +7,19 @@ import { IBannerPost } from './banner.post.interface';
         <div class="post-highlights1">
             <p><b>Article-{{ bannerpost.sn }}: {{ bannerpost.title }}</b></p>
             <p>Category: {{ bannerpost.category }}</p>
-	</div>
+            <app-starrating [rating] = "bannerpost.rating" (clickedItem) = "onStarClicked($event)"></app-starrating>
+	    </div>
   `,
   styleUrls: ['./banner.component.css']
 })
 export class ArticleComponent implements IBannerPost {
    @Input() bannerpost: any;
+
+   constructor() {
+
+   }
+
+   onStarClicked($event) {
+    console.log(event);
+   }
 }
