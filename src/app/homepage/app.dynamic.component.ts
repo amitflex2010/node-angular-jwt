@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-dynamic-component',
-  template: `<h2>I'm dynamically attached {{ data }}</h2>`
+  templateUrl: './app.dynamic.component.html',
+  styleUrls: ['./app.dynamic.component.css']
 })
 export class DynamicComponent {
-    @Input() data: String = 'Component';
+    @Input() data: any;
+    constructor() {}
 }

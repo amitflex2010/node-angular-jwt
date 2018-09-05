@@ -24,10 +24,12 @@ h1
     text-align: center;
     color: #003145;
     font-size: 34px;
+    font-family: myFirstFont;
 } 
 h3
 {
     color: #003145;
+    font-family: myFirstFont;
 }
 
 

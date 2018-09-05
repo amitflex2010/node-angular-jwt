@@ -13,7 +13,7 @@ export class DemoComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    console.log("hshhh")
+
     this.appService.addBookWithObservable()
     .subscribe(data => {
        this.classData = data;

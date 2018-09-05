@@ -1,0 +1,39 @@
+.d-item {
+    border: 1px solid #003145;
+    width: 375px;
+    margin: 5px;
+    background: #aaddf1;
+}
+
+.rm-btn {
+    background-color: #d40504;
+    border: none;
+    color: white;
+    padding: 3px 7px;
+    margin: 8px 8px 8px 8px;
+    text-align: center;
+    font-size: 16px;
+    width: 20%;
+    opacity: 1;
+    font-family: myFirstFont;
+}
+
+.d-title {
+    color: #003145;
+    padding: 10px;
+    cursor: pointer;
+    font-family: myFirstFont;
+}
+
+.d-spn {
+    padding-right: 5px;
+    font-size: 24px;
+    color: red;
+    margin-top: -39px;
+    float: right;
+    font-family: myFirstFont;
+}
+
+h2 {
+    font-family: myFirstFont;
+}

@@ -11,12 +11,14 @@ apiRoutes.get('/tasks', todoList.list_all_tasks);
 apiRoutes.post('/tasks', todoList.create_a_task);
 
 
-apiRoutes.get('/tasks/:taskId', todoList.read_a_task)
-apiRoutes.put('/tasks/:taskId', todoList.update_a_task)
+apiRoutes.get('/tasks/:taskId', todoList.read_a_task);
+apiRoutes.put('/tasks/:taskId', todoList.update_a_task);
 apiRoutes.delete('/tasks/:taskId', todoList.delete_a_task);
 
+apiRoutes.post('/uploads',todoList.doUpload);
 
-apiRoutes.post('/login', todoList.doLogin)
+
+apiRoutes.post('/login', todoList.doLogin);
 apiRoutes.post('/login', todoList.doRegister); 
 
 app.use('/api',apiRoutes);
